@@ -1,0 +1,19 @@
+services:
+  db:
+    image: mariadb:10.6
+    container_name: finance-forge-db
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: app
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db/data:/var/lib/mysql
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: finance-forge-mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
