@@ -14,4 +14,9 @@ class FinancialInstitution extends Model
         'iban',
         'type',
     ];
+
+    public function balances()
+    {
+        return $this->hasMany(FinancialInstitutionBalance::class);
+    }
 }
