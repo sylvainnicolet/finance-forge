@@ -61,6 +61,7 @@ class FinancialInstitutionBalanceResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('financialInstitution.name')
+                    ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('balance')
                     ->numeric()
